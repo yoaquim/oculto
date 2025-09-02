@@ -2,6 +2,12 @@ import { Key } from "lucide-react"
 import { ContactButton } from "@/components/contact-button"
 import { TextReveal } from "@/components/magicui/text-reveal"
 import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text"
+import { VideoText } from "@/components/magicui/video-text"
+import { TypingAnimation } from "@/components/magicui/typing-animation"
+import { BoxReveal } from "@/components/magicui/box-reveal"
+import { ColoredTyping } from "@/components/colored-typing"
+import { ShinyText } from "@/components/shiny-text"
+import { AuroraText } from "@/components/magicui/aurora-text"
 
 export default function Home() {
   return (
@@ -13,7 +19,16 @@ export default function Home() {
             <h1 className="text-6xl md:text-8xl mb-6 leading-none tracking-tighter font-light">
               A Hidden World.
               <br />
-              <span style={{color: 'var(--oculto-crimson)'}}>Curated.</span>
+              <div className="h-32 flex items-center justify-center">
+                <VideoText 
+                  src="/videos/nightlife.mp4" 
+                  fontSize="20vw"
+                  fontWeight="600"
+                  className="w-full max-w-lg uppercase"
+                >
+                  CURATED.
+                </VideoText>
+              </div>
             </h1>
             <AnimatedShinyText className="text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
               This is Oculto City. Private dinners, underground nightlife, seamless exclusivity, and no maps allowed.
@@ -32,7 +47,13 @@ export default function Home() {
       <section className="py-24 px-6" style={{backgroundColor: 'var(--oculto-black)'}}>
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-6xl mb-8 font-light tracking-tight">Culture in <span style={{color: 'var(--oculto-crimson)'}}>Motion</span></h2>
+            <ColoredTyping
+              text="Culture in Motion"
+              highlightWord="Motion"
+              highlightColor="#ff1d74"
+              className="text-4xl md:text-6xl mb-8 font-light tracking-tight"
+              duration={80}
+            />
             <p className="text-lg md:text-xl max-w-3xl font-light opacity-90">
               A curated reel of Puerto Rico's nightlife, sound, fashion, and movement. Here, island culture doesn't just exist—it pulses.
             </p>
@@ -58,7 +79,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="animate-fade-in">
-              <h2 className="text-4xl md:text-6xl mb-8 font-light tracking-tight">Puerto Rico in <span style={{color: 'var(--oculto-crimson)'}}>La Sombra</span></h2>
+              <h2 className="text-4xl md:text-6xl mb-8 font-light tracking-tight inline-flex items-baseline gap-3">
+                <span>Puerto Rico in</span>
+                <BoxReveal boxColor="#ff1d74" duration={0.5} className="inline">
+                  <span style={{color: 'var(--oculto-crimson)'}}>La Sombra</span>
+                </BoxReveal>
+              </h2>
               <p className="text-lg md:text-xl mb-8 font-light opacity-90">
                 Hidden beaches. Rooftops no one knows about. River hikes at dusk. This is the Puerto Rico you won't find on TripAdvisor. Only accessible through Oculto City.
               </p>
@@ -97,7 +123,15 @@ export default function Home() {
             <div className="inline-block px-4 py-2 bg-accent/10 rounded-full mb-8">
               <span className="text-accent text-sm font-medium tracking-wider uppercase">New • Beta</span>
             </div>
-            <h2 className="text-4xl md:text-6xl mb-8 font-light tracking-tight"><span style={{color: 'var(--oculto-crimson)'}}>Insiders</span> Only</h2>
+            <h2 className="text-4xl md:text-6xl mb-8 font-light tracking-tight">
+              <AuroraText 
+                className="inline text-4xl md:text-6xl font-light tracking-tight"
+                colors={["#ff1d74", "#ff5599", "#ff6b9d", "#ff4488", "#ff1d74"]}
+              >
+                Insiders
+              </AuroraText>
+              <span> Only</span>
+            </h2>
             <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light opacity-90">
               You don't apply. You get referred. Every member of Oculto City enters by invitation or whispers from someone already inside. Here, influence replaces advertising.
             </p>
@@ -135,8 +169,23 @@ export default function Home() {
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="animate-fade-in">
-            <Key className="w-16 h-16 mx-auto mb-8" style={{color: 'var(--oculto-crimson)'}} />
-            <h2 className="text-4xl md:text-6xl mb-8 font-light tracking-tight">The <span style={{color: 'var(--oculto-crimson)'}}>Key</span></h2>
+            <div className="relative flex items-center justify-center mb-8 h-20">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#ff1d74] via-[#ff6b9d] to-[#ff1d74] opacity-10 blur-lg"></div>
+              </div>
+              <Key className="w-16 h-16 relative z-10" style={{
+                color: '#ff1d74',
+                filter: 'drop-shadow(0 0 8px rgba(255, 29, 116, 0.3))'
+              }} />
+            </div>
+            <h2 className="text-4xl md:text-6xl mb-8 font-light tracking-tight overflow-visible">
+              The{" "}
+              <span className="inline-block overflow-visible">
+                <ShinyText className="text-4xl md:text-6xl font-medium tracking-tight">
+                  Key
+                </ShinyText>
+              </span>
+            </h2>
             <p className="text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light opacity-90">
               Ready to step inside? Use your referral or reach out to our concierge for access.
             </p>
