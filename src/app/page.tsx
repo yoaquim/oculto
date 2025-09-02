@@ -15,28 +15,26 @@ export default function Home() {
     <main className="min-h-screen text-white overflow-x-hidden" style={{backgroundColor: '#191919', '--oculto-black': '#191919', '--oculto-military-green': '#4a5d23', '--oculto-crimson': '#ff1d74', '--oculto-deep-grey': '#1c1c1c', '--oculto-grey': '#2d2d2d', '--oculto-white': '#f8f8f8'} as React.CSSProperties}>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6">
-        <FlickeringGrid
-          className="absolute inset-0 z-0"
-          squareSize={4}
-          gridGap={6}
-          color="#ffffff"
-          maxOpacity={0.15}
-          flickerChance={0.2}
+        <video 
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="https://www.pexels.com/download/video/4035859/"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/images/hero-poster.jpg"
         />
+        <div className="absolute inset-0 bg-black/30 z-5"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="animate-fade-in-up">
             <h1 className="text-6xl md:text-8xl mb-6 leading-none tracking-tighter font-light">
               A Hidden World.
               <br />
               <div className="h-32 flex items-center justify-center">
-                <VideoText 
-                  src="/videos/nightlife.mp4" 
-                  fontSize="20vw"
-                  fontWeight="600"
-                  className="w-full max-w-lg uppercase"
-                >
-                  CURATED.
-                </VideoText>
+                <span className="text-6xl md:text-8xl font-medium tracking-tighter" style={{color: '#ff1d74'}}>
+                  Curated.
+                </span>
               </div>
             </h1>
             <p className="text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light text-white">
