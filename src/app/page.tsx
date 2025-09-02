@@ -8,13 +8,22 @@ import { BoxReveal } from "@/components/magicui/box-reveal"
 import { ColoredTyping } from "@/components/colored-typing"
 import { ShinyText } from "@/components/shiny-text"
 import { AuroraText } from "@/components/magicui/aurora-text"
+import { FlickeringGrid } from "@/components/magicui/flickering-grid"
 
 export default function Home() {
   return (
     <main className="min-h-screen text-white overflow-x-hidden" style={{backgroundColor: '#191919', '--oculto-black': '#191919', '--oculto-military-green': '#4a5d23', '--oculto-crimson': '#ff1d74', '--oculto-deep-grey': '#1c1c1c', '--oculto-grey': '#2d2d2d', '--oculto-white': '#f8f8f8'} as React.CSSProperties}>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-7xl mx-auto text-center">
+        <FlickeringGrid
+          className="absolute inset-0 z-0"
+          squareSize={4}
+          gridGap={6}
+          color="#ffffff"
+          maxOpacity={0.15}
+          flickerChance={0.2}
+        />
+        <div className="max-w-7xl mx-auto text-center relative z-10">
           <div className="animate-fade-in-up">
             <h1 className="text-6xl md:text-8xl mb-6 leading-none tracking-tighter font-light">
               A Hidden World.
@@ -30,9 +39,9 @@ export default function Home() {
                 </VideoText>
               </div>
             </h1>
-            <AnimatedShinyText className="text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light">
+            <p className="text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light text-white">
               This is Oculto City. Private dinners, underground nightlife, seamless exclusivity, and no maps allowed.
-            </AnimatedShinyText>
+            </p>
           </div>
         </div>
         
@@ -60,16 +69,70 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300" style={{backgroundColor: 'var(--oculto-grey)'}}>
-                <div className="w-full h-full flex items-center justify-center" style={{background: 'linear-gradient(to bottom right, rgba(74, 93, 35, 0.2), rgba(139, 21, 56, 0.2))'}}>
-                  <div className="text-center">
-                    <div className="text-4xl mb-4 opacity-40">📸</div>
-                    <p className="text-sm text-white/60">B&W Culture Photo {item}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+            {/* Row 1 */}
+            {/* Square 1: Video 1 */}
+            <div className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 relative border border-white/10" style={{background: 'linear-gradient(to bottom right, rgba(74, 93, 35, 0.2), rgba(139, 21, 56, 0.2))', boxShadow: '0 0 20px rgba(255, 29, 116, 0.15)'}}>
+              <video 
+                className="w-full h-full object-cover"
+                src="/videos/1.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            </div>
+            
+            {/* Square 2: Picture 5 */}
+            <div className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 relative border border-white/10" style={{background: 'linear-gradient(to bottom right, rgba(74, 93, 35, 0.2), rgba(139, 21, 56, 0.2))', boxShadow: '0 0 20px rgba(255, 29, 116, 0.15)'}}>
+              <img 
+                className="w-full h-full object-cover"
+                src="/pictures/5.jpg"
+                alt="Culture"
+              />
+            </div>
+            
+            {/* Square 3: Video 9 */}
+            <div className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 relative border border-white/10" style={{background: 'linear-gradient(to bottom right, rgba(74, 93, 35, 0.2), rgba(139, 21, 56, 0.2))', boxShadow: '0 0 20px rgba(255, 29, 116, 0.15)'}}>
+              <video 
+                className="w-full h-full object-cover"
+                src="/videos/9.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            </div>
+            
+            {/* Row 2 */}
+            {/* Square 1: Picture 6 */}
+            <div className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 relative border border-white/10" style={{background: 'linear-gradient(to bottom right, rgba(74, 93, 35, 0.2), rgba(139, 21, 56, 0.2))', boxShadow: '0 0 20px rgba(255, 29, 116, 0.15)'}}>
+              <img 
+                className="w-full h-full object-cover"
+                src="/pictures/6.jpg"
+                alt="Culture"
+              />
+            </div>
+            
+            {/* Square 2: Video 7 */}
+            <div className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 relative border border-white/10" style={{background: 'linear-gradient(to bottom right, rgba(74, 93, 35, 0.2), rgba(139, 21, 56, 0.2))', boxShadow: '0 0 20px rgba(255, 29, 116, 0.15)'}}>
+              <video 
+                className="w-full h-full object-cover"
+                src="/videos/7.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            </div>
+            
+            {/* Square 3: Picture 7 */}
+            <div className="aspect-square rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300 relative border border-white/10" style={{background: 'linear-gradient(to bottom right, rgba(74, 93, 35, 0.2), rgba(139, 21, 56, 0.2))', boxShadow: '0 0 20px rgba(255, 29, 116, 0.15)'}}>
+              <img 
+                className="w-full h-full object-cover"
+                src="/pictures/7.jpg"
+                alt="Culture"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -104,13 +167,15 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="aspect-[4/3] rounded-lg overflow-hidden" style={{backgroundColor: 'var(--oculto-grey)'}}>
-              <div className="w-full h-full flex items-center justify-center" style={{background: 'linear-gradient(to bottom right, rgba(74, 93, 35, 0.3), rgba(10, 10, 10, 0.5))'}}>
-                <div className="text-center">
-                  <div className="text-6xl mb-4 opacity-40">🌴</div>
-                  <p className="text-sm text-white/60">Hidden Puerto Rico</p>
-                </div>
-              </div>
+            <div className="aspect-[4/3] rounded-lg overflow-hidden relative border border-white/10" style={{background: 'linear-gradient(to bottom right, rgba(74, 93, 35, 0.3), rgba(10, 10, 10, 0.5))', boxShadow: '0 0 20px rgba(255, 29, 116, 0.15)'}}>
+              <video 
+                className="w-full h-full object-cover"
+                src="/videos/3.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
             </div>
           </div>
         </div>
@@ -190,7 +255,7 @@ export default function Home() {
               Ready to step inside? Use your referral or reach out to our concierge for access.
             </p>
             
-            <div className="space-y-6">
+            <div className="space-y-12">
               <ContactButton />
               
               <div className="flex items-center justify-center space-x-8 text-sm text-white/60">

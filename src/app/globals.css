@@ -178,9 +178,10 @@
 
 @layer base {
   * {
-    @apply border-gray-700 outline-ring/50;
+    @apply border-gray-700;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: #191919;
+    color: white;
   }
 }
